@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 --------------------------------------------------------------*/
 /* Desktop Navigation */
 .nav-menu {
-  margin-top: 35px;
+  margin-top: 50px;
 }
 
 .nav-menu ul {
@@ -158,9 +158,9 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   position: relative;
   color: #fff;
-  font-size: 19px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight: 450;
 }
 
 .nav-menu a:before {
@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header Top */
 #header.header-top {
-  height: 90px;
+  height: 120px;
   position: fixed;
   left: 0;
   top: 0;
