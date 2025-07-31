@@ -1,0 +1,42 @@
+[
+  {
+    "category": "Foundation Models & Multimodal LLMs",
+    "skills": "GPT-4o, Claude 3, Gemini 1.5 Pro, Mixtral, LLaMA 3, Mistral 7B, DeepSeek-VL, Command R+, PaLM 2, LLaVA, Flamingo, Kosmos-2, Whisper, wav2vec 2.0, CLIP, BLIP-2, Segment Anything, SAM-B, Video-LLaMA, Fuyu-Heavy, Idefics2"
+  },
+  {
+    "category": "Time-Series and Forecasting LLMs",
+    "skills": "Chronos-Mamba, PatchTST, TiDE, TimeGPT, TimesFM, TS-Mamba, Informer, FEDformer, Autoformer, Temporal Fusion Transformers (TFT), DeepAR"
+  },
+  {
+    "category": "Agentic Frameworks",
+    "skills": "CrewAI, LangGraph, AutoGen, MetaGPT, AgentOps, OpenAgents"
+  },
+  {
+    "category": "LLMOps and Monitoring",
+    "skills": "Weights & Biases, Helicone, Trulens, OpenLLMetry, PromptLayer, Arize AI, LangSmith, Evidently AI, HumanLoop"
+  },
+  {
+    "category": "Programming Languages",
+    "skills": "Python, C, C++, SQL, Bash, PowerShell, TypeScript"
+  },
+  {
+    "category": "ML/DL Frameworks",
+    "skills": "PyTorch, TensorFlow, Hugging Face Transformers, Scikit-learn, OpenCV, Fastai, LightGBM, XGBoost, PyCaret"
+  },
+  {
+    "category": "System Design & MLOps",
+    "skills": "FastAPI, gRPC, Ray Serve, REST/GraphQL, Kafka, Redis Streams, Kubernetes, Docker, Celery, Apache Airflow, MLflow, Kubeflow, Argo Workflows"
+  },
+  {
+    "category": "RAG & Vector DBs",
+    "skills": "LangChain, LlamaIndex, ChromaDB, Weaviate, FAISS, Pinecone, LanceDB, Milvus, Hybrid Search (BM25 + Dense), Multi-vector RAG"
+  },
+  {
+    "category": "Cloud & DevOps",
+    "skills": "AWS (SageMaker, Bedrock, EC2, Lambda), Azure OpenAI, GCP Vertex AI, RunPod, Replicate, Ollama, Hugging Face Hub, Terraform, Ansible"
+  },
+  {
+    "category": "AISecOps & Responsible AI",
+    "skills": "Adversarial Robustness Toolbox (ART), LLM Guard, Rebuff, Guardrails AI, SecFix, Fairlearn, Snyk, IBM AI Fairness 360"
+  }
+] 

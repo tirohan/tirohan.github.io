@@ -1,0 +1,74 @@
+[
+  {
+    "id": "twitter-analysis",
+    "title": "Twitter Analysis",
+    "category": "filter-app",
+    "categoryName": "Machine Learning",
+    "image": "assets/img/project/twitteranalysis.jpg",
+    "detailsUrl": "projects/twitteranalysis.html"
+  },
+  {
+    "id": "data-engineering",
+    "title": "End-to-End-Data-Engineering",
+    "category": "filter-app",
+    "categoryName": "Machine Learning",
+    "image": "assets/img/project/iras.jpeg",
+    "detailsUrl": "projects/dataengineering.html"
+  },
+  {
+    "id": "network-intrusion",
+    "title": "Network Intrusion Detection System",
+    "category": "filter-project",
+    "categoryName": "Web",
+    "image": "assets/img/project/gan.jpg",
+    "detailsUrl": "projects/nids.html"
+  },
+  {
+    "id": "plant-disease",
+    "title": "Plant Disease Detection",
+    "category": "filter-project",
+    "categoryName": "Web",
+    "image": "assets/img/project/recommender.jpg",
+    "detailsUrl": "projects/pdd.html"
+  },
+  {
+    "id": "opencv-projects",
+    "title": "OpenCV Projects",
+    "category": "filter-app",
+    "categoryName": "Machine Learning",
+    "image": "assets/img/project/todo.jpg",
+    "detailsUrl": "projects/opencv.html"
+  },
+  {
+    "id": "nlp-paraphrasing",
+    "title": "NLP-based-English-and-Spanish-Paraphrasing",
+    "category": "filter-app",
+    "categoryName": "Machine Learning",
+    "image": "assets/img/project/resume.jpg",
+    "detailsUrl": "projects/paraphrasing.html"
+  },
+  {
+    "id": "bangla-summarizer",
+    "title": "Bangla-Text-Summarizer",
+    "category": "filter-app",
+    "categoryName": "Machine Learning",
+    "image": "assets/img/project/vdg.jpg",
+    "detailsUrl": "projects/btsm.html"
+  },
+  {
+    "id": "crop-recommendation",
+    "title": "Crop Recommendation System",
+    "category": "filter-project",
+    "categoryName": "Web",
+    "image": "assets/img/project/ml.jpg",
+    "detailsUrl": "projects/croprec.html"
+  },
+  {
+    "id": "chatgpt-chatbot",
+    "title": "ChatGPT-Chatbot",
+    "category": "filter-project",
+    "categoryName": "Web",
+    "image": "assets/img/project/gan.jpg",
+    "detailsUrl": "projects/chatgpt.html"
+  }
+] 

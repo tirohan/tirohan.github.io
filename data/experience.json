@@ -1,0 +1,51 @@
+[
+  {
+    "id": "tuliptech",
+    "company": "TulipTech",
+    "position": "AI Engineer",
+    "period": "April 2025 - Present",
+    "website": "#",
+    "achievements": [
+      "Built and deployed next-gen AI inference pipelines using GPT-4o, Claude 3, Gemini 1.5, Mixtral, Llama, and DeepSeek; optimized latency by 30% with vLLM, TensorRT-LLM, LiteLLM, and Ollama on RunPod and AWS Inferentia.",
+      "Developed multi-agent systems with CrewAI, LangGraph, and AutoGen, enabling dynamic task planning, reflection, and hybrid RAG with ColBERT, BM25, and streaming pipelines via WebSockets.",
+      "Implemented LLMOps and observability workflows using Weights & Biases, Phoenix, and MLFlow, with robust function-calling, self-consistency, and Mixture-of-Experts (MoE) architectures for scalable agent orchestration.",
+      "Engineered real-time microservices and APIs using FastAPI, gRPC, Redis Streams, and Kafka; integrated vector databases (Pinecone, ChromaDB, FAISS, Weaviate, LanceDB) ensuring 99.9% uptime for critical GenAI deployments."
+    ]
+  },
+  {
+    "id": "ssl-wireless",
+    "company": "SSL Wireless",
+    "position": "Data Scientist",
+    "period": "February 2024 - April 2025",
+    "website": "https://sslwireless.com/",
+    "achievements": [
+      "Designed and deployed scalable APIs for edge-based computer vision, improving image classification accuracy by 40% and reducing latency by 20%; developed real-time object detection and tracking models, increasing accuracy by 25% and lowering false positives by 30%.",
+      "Researched and integrated cutting-edge LLMs (GPT-4, LLaMA, Mistral) with Retrieval-Augmented Generation (RAG), boosting query resolution by 35%; built multimodal systems combining vision and language models to reduce manual effort by 20% and improve decision-making efficiency.",
+      "Automated finance and business pipelines using Claude, Gemini, and Mixtral-powered LLM agents for forecasting, anomaly detection, and report generation; mentored junior team members on model development and best practices to foster in-house AI expertise."
+    ]
+  },
+  {
+    "id": "easital",
+    "company": "Easital Technologies Ltd",
+    "position": "Artificial Intelligence Engineer",
+    "period": "August 2023 - January 2024",
+    "website": "https://easital.com/",
+    "achievements": [
+      "Led the development of a chatbot for Beeda's international mega-app, leveraging LangChain, Llama Index, and graph databases to manage complex user queries, increasing user engagement by 20%.",
+      "Reduced OCR errors in business card scanning by 35% through advanced AI-based optical character recognition and image preprocessing techniques; fine-tuned LLMs and engineered prompts to meet organizational and user-specific objectives.",
+      "Optimized deployment workflows by integrating Docker, Kubernetes, and CI/CD pipelines, resulting in a 25% improvement in deployment speed and reliability."
+    ]
+  },
+  {
+    "id": "aqualink",
+    "company": "Aqualink Bangladesh Ltd",
+    "position": "Machine Learning Engineer",
+    "period": "May 2021 - June 2023",
+    "website": "https://aqualinkbangladesh.com/",
+    "achievements": [
+      "Built predictive models for agricultural and weather datasets, improving accuracy by 15% through multimodal feature integration and advanced hyperparameter tuning aligned with business needs.",
+      "Designed a Django-based real-time analytics platform and visual dashboards using Power BI, Google Data Studio, and Python, boosting operational efficiency by 30% and enabling data-driven decision-making.",
+      "Collaborated with agronomy and climate experts to deploy models and tools that seamlessly integrated into field operations and supported strategic planning."
+    ]
+  }
+] 

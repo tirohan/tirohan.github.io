@@ -7,6 +7,124 @@
 !(function($) {
   "use strict";
 
+  // Dynamic Content Loading
+  async function loadExperience() {
+    try {
+      const response = await fetch('data/experience.json');
+      const experiences = await response.json();
+      const experienceContainer = document.querySelector('#experience .col-lg-12');
+      
+      if (experienceContainer) {
+        // Clear existing content except the first child (which might be empty)
+        const existingBoxes = experienceContainer.querySelectorAll('.icon-box');
+        existingBoxes.forEach(box => box.remove());
+
+        experiences.forEach((exp, index) => {
+          const experienceHTML = `
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="${100 + (index * 100)}">
+              <h4 style="text-align:left;"><a href="${exp.website}" style="color:#00d4aa">${exp.company}</a><br></h4>
+              <h5 style="text-align:left;">${exp.period}</h5>
+              <p style="text-align:left;color:#e4e6ea"><em>${exp.position}</em></p>
+              <ul style="text-align:left;">
+                ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+          experienceContainer.insertAdjacentHTML('beforeend', experienceHTML);
+        });
+      }
+    } catch (error) {
+      console.error('Error loading experience data:', error);
+    }
+  }
+
+  async function loadProjects() {
+    try {
+      const response = await fetch('data/projects.json');
+      const projects = await response.json();
+      const projectContainer = document.querySelector('.portfolio-container');
+      
+      if (projectContainer) {
+        // Clear existing projects
+        projectContainer.innerHTML = '';
+
+        projects.forEach(project => {
+          const projectHTML = `
+            <div class="col-lg-4 col-md-6 portfolio-item ${project.category}">
+              <center><h4>${project.title}</h4></center>
+              <div class="portfolio-wrap">
+                <img src="${project.image}" class="img-fluid" alt="${project.title}">
+                <div class="portfolio-info">
+                  <div class="portfolio-links">
+                    <a href="${project.detailsUrl}" data-gall="portfolioDetailsGallery" data-vbtype="iframe" class="venobox" title="Project Details">
+                      <i class="bx bx-info-circle"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+          projectContainer.insertAdjacentHTML('beforeend', projectHTML);
+        });
+
+        // Reinitialize Isotope after loading projects
+        if (typeof $.fn.isotope !== 'undefined') {
+          setTimeout(() => {
+            const portfolioIsotope = $('.portfolio-container').isotope({
+              itemSelector: '.portfolio-item',
+              layoutMode: 'fitRows'
+            });
+
+            $('#portfolio-flters li').off('click').on('click', function() {
+              $("#portfolio-flters li").removeClass('filter-active');
+              $(this).addClass('filter-active');
+              portfolioIsotope.isotope({
+                filter: $(this).data('filter')
+              });
+            });
+          }, 100);
+        }
+      }
+    } catch (error) {
+      console.error('Error loading projects data:', error);
+    }
+  }
+
+  async function loadSkills() {
+    try {
+      const response = await fetch('data/skills.json');
+      const skillCategories = await response.json();
+      const skillsContainer = document.querySelector('#skills .col-lg-12');
+      
+      if (skillsContainer) {
+        // Clear existing skills
+        const existingSkills = skillsContainer.querySelectorAll('.icon-box');
+        existingSkills.forEach(skill => skill.remove());
+
+        skillCategories.forEach((category, index) => {
+          const skillHTML = `
+            <div class="col-md-12 mt-4 mt-md-0 icon-box" data-aos="fade-up" data-aos-delay="${100 + (index * 50)}" style="background:#fff">
+              <h4 style="text-align:left;color:#09203a">${category.category}</h4>
+              <p style="text-align:left;color:#333;font-size:14px;">
+                ${category.skills}
+              </p>
+            </div>
+          `;
+          skillsContainer.insertAdjacentHTML('beforeend', skillHTML);
+        });
+      }
+    } catch (error) {
+      console.error('Error loading skills data:', error);
+    }
+  }
+
+  // Initialize dynamic content loading
+  function initDynamicContent() {
+    loadExperience();
+    loadProjects();
+    loadSkills();
+  }
+
   // Nav Menu
   $(document).on('click', '.nav-menu a, .mobile-nav a', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -44,7 +162,6 @@
         }
 
         return false;
-
       }
     }
   });
@@ -125,27 +242,104 @@
     }
   });
 
-  // Porfolio isotope and filter
+  // Portfolio isotope and filter
   $(window).on('load', function() {
-    var portfolioIsotope = $('.portfolio-container').isotope({
-      itemSelector: '.portfolio-item',
-      layoutMode: 'fitRows'
-    });
-
-    $('#portfolio-flters li').on('click', function() {
-      $("#portfolio-flters li").removeClass('filter-active');
-      $(this).addClass('filter-active');
-
-      portfolioIsotope.isotope({
-        filter: $(this).data('filter')
+    // Initialize dynamic content first
+    initDynamicContent();
+    
+    // Wait a bit for content to load, then initialize isotope
+    setTimeout(() => {
+      var portfolioIsotope = $('.portfolio-container').isotope({
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
       });
-    });
 
+      $('#portfolio-flters li').on('click', function() {
+        $("#portfolio-flters li").removeClass('filter-active');
+        $(this).addClass('filter-active');
+
+        portfolioIsotope.isotope({
+          filter: $(this).data('filter')
+        });
+      });
+    }, 500);
   });
 
-  // Initiate venobox (lightbox feature used in portofilo)
+  // Initiate venobox (lightbox feature used in portfolio)
   $(document).ready(function() {
-    $('.venobox').venobox();
+    // Initialize dynamic content on page ready as well
+    setTimeout(() => {
+      $('.venobox').venobox();
+    }, 600);
+  });
+
+  // Modern Contact Form Handler (using Formspree)
+  function initModernContactForm() {
+    const form = document.querySelector('.php-email-form');
+    if (form) {
+      // Update form action to use Formspree (you'll need to replace with your endpoint)
+      form.setAttribute('action', '@https://formspree.io/f/xldllzlj');
+      form.setAttribute('method', 'POST');
+      
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const submitButton = form.querySelector('button[type="submit"]');
+        const loading = form.querySelector('.loading');
+        const errorMessage = form.querySelector('.error-message');
+        const sentMessage = form.querySelector('.sent-message');
+        
+        // Show loading state
+        loading.style.display = 'block';
+        submitButton.disabled = true;
+        
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          
+          loading.style.display = 'none';
+          
+          if (response.ok) {
+            sentMessage.style.display = 'block';
+            form.reset();
+          } else {
+            errorMessage.style.display = 'block';
+            errorMessage.textContent = 'There was a problem sending your message. Please try again.';
+          }
+        } catch (error) {
+          loading.style.display = 'none';
+          errorMessage.style.display = 'block';
+          errorMessage.textContent = 'Network error. Please check your connection and try again.';
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+    }
+  }
+
+  // Initialize modern contact form
+  $(document).ready(function() {
+    initModernContactForm();
+  });
+
+  // Add smooth scrolling for better UX
+  $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function(event) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top - 100
+        }, 1000, "easeInOutExpo");
+      }
+    }
   });
 
 })(jQuery);
